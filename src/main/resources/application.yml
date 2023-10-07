@@ -1,0 +1,26 @@
+spring:
+  restart:
+    enabled: false
+    poll-interval: 2s
+  datasource:
+    url: jdbc:mysql://localhost/db_certicom?serverTimezone=America/Santiago&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create-drop
+
+## Configuración de Swagger
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  paths-to-match: /**
+
+logging:
+  level:
+    org.hibernate.SQL: debug
